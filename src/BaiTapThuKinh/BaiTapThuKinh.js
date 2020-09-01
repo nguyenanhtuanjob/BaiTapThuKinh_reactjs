@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./BaiTapThuKinh.css"
 import Header from './Header';
 import DanhSachSanPham from './DanhSachSanPham';
+import ThuKinh from './ThuKinh';
 export default class BaiTapThuKinh extends Component {
     arrProduct = [
 
@@ -25,11 +26,11 @@ export default class BaiTapThuKinh extends Component {
     
     ];
     state ={
-        sanPhamThu :[{
+        sanPhamThu :{
             url:'./img/v1.png',
             name:'GUCCI G8850U',
             desc: 'Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. '
-        }]
+        }
     };
     thuKinh = (spClick)=>{
         console.log('spClick',spClick);
@@ -39,7 +40,7 @@ export default class BaiTapThuKinh extends Component {
     };
     render() {
         //gom nhóm state
-        let {url,name,desc} = this.state.sanPhamThu;
+        
         return (
             <div className="background">
                 <Header/>
@@ -47,16 +48,7 @@ export default class BaiTapThuKinh extends Component {
                     <div className="row">
                         <div className="col-6 my-3">
                             {/* //Model thử kính  */}
-                            <div className="model">
-                                <img style={{ width:'50%'}} src="./img/model.jpg" alt=""/>
-                                <div className="thuKinh">
-                                    <img style={{ width:'55%'}}src={url} alt=""/>
-                                </div>
-                                <div className="model__info">
-                                    <h3 className="text-left">{name}</h3>
-                                    <p className="text-left">{desc}</p>
-                                </div>
-                            </div>
+                            <ThuKinh thuKinh={this.state.sanPhamThu}/>
                             
                         </div>
                         <div className="col-6 my-3">
